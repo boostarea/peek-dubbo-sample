@@ -4,8 +4,6 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.example.api.ProviderService;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-
 /**
  * TODO
  *
@@ -16,13 +14,13 @@ import javax.annotation.PostConstruct;
 @Service
 public class ConsumerService {
 
-    @Reference(loadbalance = "random")
+    @Reference
     private ProviderService providerService;
 
-    @PostConstruct
-    public void init() {
-        this.consumer("boot-consumer");
-    }
+    // @PostConstruct
+    // public void init() {
+    //     this.consumer("boot-consumer");
+    // }
 
     public String consumer(String name) {
         String res = providerService.sayHello(name);

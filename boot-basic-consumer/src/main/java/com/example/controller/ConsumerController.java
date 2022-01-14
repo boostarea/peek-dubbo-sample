@@ -1,10 +1,10 @@
 package com.example.controller;
 
 import com.example.service.ConsumerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.annotation.Resource;
 
 /**
  * TODO
@@ -16,11 +16,11 @@ import javax.annotation.Resource;
 @RestController
 public class ConsumerController {
 
-    @Resource
+    @Autowired
     private ConsumerService consumerService;
 
     @GetMapping("test/{name}")
-    public void test(String name) {
-        String consumer = consumerService.consumer(name);
+    public String test(@PathVariable String name) {
+        return consumerService.consumer(name);
     }
 }

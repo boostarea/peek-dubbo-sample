@@ -16,6 +16,11 @@ public class ProviderServiceImpl implements ProviderService {
     @Override
     public String sayHello(String name) {
         System.out.println("boot-provider-01");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return name + " Hello, boot-provider";
     }
 }
