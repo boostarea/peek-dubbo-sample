@@ -13,22 +13,22 @@ import java.util.List;
  * @version 1.0
  * @since 2022/1/12
  **/
-@Service(group = "provider_01")
-public class ProviderServiceImpl implements ProviderService {
+@Service(group = "provider_02")
+public class Provider02ServiceImpl implements ProviderService {
 
     @Override
     public String sayHello(String name) {
-        System.out.println("boot-provider-01");
+        System.out.println("boot-provider-01-02");
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return name + " Hello, boot-provider";
+        return name + " Hello, boot-provider-01-02";
     }
 
     @Override
     public List<String> listMerger() {
-        return Arrays.asList("01-01");
+        return Arrays.asList("02-01");
     }
 }
